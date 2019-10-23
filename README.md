@@ -10,27 +10,29 @@
 ### Association
 - belongs_to :group
 - belongs_to :grup_chat
+- belongs_to :message
+
 
 ## grupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|grup_name|integer|null: false, unique: true|
+|name|integer|null: false, unique: true|
 |user_id|integer|null: false, unique: true|
 
 ### Association
-- belongs_to :user
-- belongs_to :grup
-- belongs_to :grup_chat
+- belongs_to :grup_user
+- belongs_to :message
 
 
-## grup_chatテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|image|integer|null: false|
-|text|integer|null: false|
+|image|integer|
+|text|integer|
 |user_id|integer|null: false, unique: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
