@@ -8,29 +8,30 @@
 |name|integer|null: false|
 
 ### Association
-- belongs_to :group
-- belongs_to :grup_chat
+- has_many :messages
+- has_many :groups_users
+
 
 ## grupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|grup_name|integer|null: false, unique: true|
+|name|integer|null: false, unique: true|
 |user_id|integer|null: false, unique: true|
 
 ### Association
-- belongs_to :user
-- belongs_to :grup
-- belongs_to :grup_chat
+- has_many :grup_users
+- has_many :messages
 
 
-## grup_chatテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|image|integer|null: false|
-|text|integer|null: false|
+|image|integer|
+|text|integer|
 |user_id|integer|null: false, unique: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
