@@ -8,9 +8,9 @@
 |name|integer|null: false|
 
 ### Association
-- belongs_to :group
-- belongs_to :grup_chat
-- belongs_to :message
+- has_many :messages 
+- has_many :groups_users 
+
 
 ## grupsテーブル
 
@@ -20,8 +20,8 @@
 |user_id|integer|null: false, unique: true|
 
 ### Association
-- belongs_to :grup_user
-- belongs_to :message
+- has_many :grup_users 
+- has_many :messages 
 
 
 ## messagesテーブル
