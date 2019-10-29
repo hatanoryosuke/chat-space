@@ -1,0 +1,49 @@
+.header
+  .header__message
+    メッセージ
+
+.chat__side
+  .side__header
+    .side__header__box
+      .side__header__box__user-name
+        user_name
+      .side__header__box_menu
+        .side__header__box_menu__new-group
+          =fa_icon 'edit'
+          =fa_icon 'cog'
+
+  .side__contents
+    =render "group"
+    =render "group"
+    =render "group"
+    =render "group"
+      
+.contets
+  .contents__top
+    .contents__top__left
+      .contents__top__left__group-name
+        グループ名
+      .contents__top__left__member
+        Member :
+        
+    .contents__top__btn
+      Edit
+      
+  .contents__center
+    =render "message"
+    =render "message"
+    =render "message"
+    =render "message"
+
+  .contents__foot
+    .message
+      .input__box
+        .input__box__text
+        .input__box__icon
+          =fa_icon'image'
+           
+      .input__submit
+        send
+  
+
+
