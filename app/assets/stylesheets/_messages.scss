@@ -1,5 +1,5 @@
 .header{
-  .header__message{
+  &__message{
     background-color: #38AEF0;
     height: 20px;
     color: #fff;
@@ -25,10 +25,10 @@
       width: 100%;
       font-weight: bold;
       
-      .side__header__box__user-name{
+      &__user-name{
 
       }
-      .side__header__box_menu__new-group{
+      &__menu__new-group{
         display: inline-block;
         margin-left: 1px;
       }
@@ -67,12 +67,12 @@
     .contents__top__left{
       margin-top: 35px;
     
-      .contents__top__left__group-name{
+      &__group-name{
         font-size: 20px;
         color: #333333;
          margin-bottom: 15px;
       }
-      .contents__top__left__member{
+      &__member{
         display: flex;
         font-size: 12px;
         color: #999999;
@@ -103,11 +103,11 @@
         display: flex;
         margin-bottom: 10px;
             
-        .message__upper-info__taker{
+        &__taker{
           font-size: 16px;
           font-weight: bold;
         }
-        .message__upper-info__date{
+        &__date{
           font-size: 12px;
           margin-left: 10px;
           color: #999999;
@@ -135,11 +135,11 @@
         height: 50px;
         width: 100%;
         
-        .input__box__text{
+        &__text{
           padding: 0 40px 0 10px;
         }
             
-        .input__box__icon{
+        &__icon{
           float: right;
           padding:10px 10px;
           font-size: 20px;
