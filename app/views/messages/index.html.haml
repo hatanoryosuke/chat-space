@@ -9,7 +9,9 @@
         user_name
       .side__header__box__menu
         .side__header__box_menu__new-group
-          =fa_icon 'edit'
+          = link_to new_group_path do
+            =fa_icon 'edit' 
+
           =fa_icon 'cog'
 
   .side__contents
