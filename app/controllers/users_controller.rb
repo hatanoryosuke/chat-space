@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
 
   def edit
-    user = User.find(paramus[id])
-    user.edit
   end
 
   def update
