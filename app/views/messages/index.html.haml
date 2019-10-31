@@ -1,51 +1,34 @@
-.header
-  .header__message
-    メッセージ
-
 .chat__side
-  .side__header
-    .side__header__box
-      .side__header__box__user-name
-        user_name
-      .side__header__box__menu
-        .side__header__box_menu__new-group
-          = link_to new_group_path do
-            =fa_icon 'edit' 
-
-          =fa_icon 'cog'
-
-  .side__contents
-    =render "group"
-    =render "group"
-    =render "group"
-    =render "group"
+  = render 'devise/shared/side_bar'
       
 .contets
   .contents__top
+    
     .contents__top__left
-      .contents__top__left__group-name
-        グループ名
-      .contents__top__left__member
-        Member :
-        
-    .contents__top__btn
-      Edit
       
-  .contents__center
-    =render "message"
-    =render "message"
-    =render "message"
-    =render "message"
+      .contents__top__left__group-name
+        = @group.name
+      .contents__top__left__member
+        - memmber = "Memmber:"
 
-  .contents__foot
-    .message
-      .input__box
-        .input__box__text
-        .input__box__icon
-          =fa_icon'image'
-           
-      .input__submit
-        send
-  
+        .contents__top__left__user
+          - @group.users.each do |user|
+            - memmber = memmber+ "#{user.name}"
+          = memmber
+        
 
+    .contents__top__btn
+      = link_to edit_group_path(@group) do
+        Edit
 
+  .messages
+    = render @messages
+    
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
