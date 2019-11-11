@@ -13,7 +13,7 @@
 
         .contents__top__left__user
           - @group.users.each do |user|
-            - memmber = memmber+ "#{user.name}"
+            - memmber = memmber+ "#{'  '+ user.name}"
           = memmber
         
 
